@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="/main.css">
+      <title>Cobbler Data</title>
+      <h1 align="middle">Cobbler Systems</h1>
+      {% for system in systems.iterkeys() %}
+           {% if system != '' %}
+              <div class="Cobbler_System floating_box">
+              <h1 align="middle"> {{ system.split('.')[0] }} </h1>
+           {% block cobbler_systems %}{% end %}
+              </div>
+          {% end %}
+      {% end %}
+</html>

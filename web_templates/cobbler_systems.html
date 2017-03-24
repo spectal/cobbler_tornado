@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block cobbler_systems %}
+    {% for item in systems[system].items() %}
+        {% set key = item[0] %}
+            {% set value = item[1] %}
+            {% if key == 'ks_meta' %}
+                {% for item in value.items() %}
+                    {{ item[0] }}: {{ item[len(item)-1] }}<br>
+                {% end %}
+            {% end %}
+    {% end %}
+{% end %}
